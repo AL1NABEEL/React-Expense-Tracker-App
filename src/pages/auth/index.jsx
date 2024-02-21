@@ -5,7 +5,14 @@ export const Auth = ()=>{
 
 const signInWithGoogle = async()=> {
 const results = await signInWithPopup(auth, provider)
-console.log(results);
+const authInfo={
+    userID: results.user.uid,
+    name: results.user.displayName,
+    profilePhoto: results.user.photoURL,
+    isAuth:true,
+}
+localStorage.setItem('auth',JSON.stringify(authInfo))
+// we cant store objects in the local storage so we will turn the object into a string 
 }
 
     return <div className="login-page">
