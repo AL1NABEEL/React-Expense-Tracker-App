@@ -1,8 +1,10 @@
 import { auth, provider } from "../../config/firebase-config";
 import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 export const Auth = ()=>{
 
+    const navigate= useNavigate();
 const signInWithGoogle = async()=> {
 const results = await signInWithPopup(auth, provider)
 const authInfo={
@@ -13,6 +15,7 @@ const authInfo={
 }
 localStorage.setItem('auth',JSON.stringify(authInfo))
 // we cant store objects in the local storage so we will turn the object into a string 
+navigate("/expense-tracker")
 }
 
     return <div className="login-page">
