@@ -1,5 +1,5 @@
 export const ExpenseTracker= ()=> {
-    return <div className="expense-tracker">
+    return <> <div className="expense-tracker">
         <div className="container">
             <h1>expense tracker</h1>
             <div className="balance">
@@ -30,4 +30,9 @@ export const ExpenseTracker= ()=> {
             </form>
         </div>
     </div>
+    
+    <div className="transactions">
+<h3>transactions</h3>
+    </div>
+    </>
 };
